@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <%- include('head'); %>
+</head>
+<body>
+    <%- include('nav'); %>
+    <section class="container">
+        <h1>Edit</h1>
+        <% if(user){ %>
+            <form class="form"">
+                <label>First name</label>
+                <input type="text" id="Fname" name="Fname" value="<%= user.Fname %>" autocomplete="off">
+                <label>Last name</label>
+                <input type="text" id="Lname" name="Lname" value="<%= user.Lname %>" autocomplete="off">
+                <label>Age</label>
+                <input type="number" id="Age" name="Age" min="0" value="<%= user.Age %>" autocomplete="off">
+                <label>Day of birth</label>
+                <input type="text" id="id" name="id" value="<%= user._id %>" style="display:none">
+                <input type="date" id="DoB" name="DoB" value="<%= user.DoB_Format %>" autocomplete="off">
+                <input class="Submit" type="submit" onclick="edit(event)" value="Save">
+                <input class="Delete" type="submit" onclick="Delete(event)" value="Delete">
+            </form>
+        <% } else { %>
+            <h3>no data</h3>
+        <% } %>
+    </section>
+</body>

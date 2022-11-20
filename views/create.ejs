@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <%- include('head'); %>
+</head>
+<body>
+    <%- include('nav'); %>
+    <section class="container">
+        <h1>Create</h1>
+        <form class="form" method="post" action="/create" autocomplete="off">
+            <label>First name</label>
+            <input type="text" id="Fname" name="Fname" autocomplete="off">
+            <label>Last name</label>
+            <input type="text" id="Lname" name="Lname" autocomplete="off">
+            <label>Age</label>
+            <input type="number" id="Age" name="Age" min="0" autocomplete="off">
+            <label>Day of birth</label>
+            <input type="date" id="DoB" name="DoB" autocomplete="off">
+            <div></div>
+            <input class="Submit" type="submit" value="Create">
+        </form>
+    </section>
+</body>

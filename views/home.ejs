@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <%- include('head'); %>
+</head>
+<body>
+    <%- include('nav'); %>
+    <section class="container">
+        <table>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Age</th>
+                <th>Day of birth</th>
+                <th></th>
+            </tr>
+            <% if(user.length != 0){ %>
+                <% for(var i = 0; i < user.length; i++) { %>
+                    <tr>
+                        <td class="Fname"><%= user[i].Fname %></td>
+                        <td class="Lname"><%= user[i].Lname %></td>
+                        <td class="Age"><%= user[i].Age %></td>
+                        <td class="DoB"><%= user[i].DoB %></td>
+                        <td class="Edit"><a href="/edit/<%= user[i]._id %>">Edit</a></td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td align="center" colspan="5">no data</td>
+                </tr>
+            <% } %>
+        </table>
+    </section>
+</body>
